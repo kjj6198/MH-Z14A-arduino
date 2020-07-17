@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/snap/arduino/current/**",
+                "/snap/arduino/current/libraries/**"
+                
+            ],
+            "defines": ["USBCON"],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "clang-x64",
+            "forcedInclude": [
+                "/snap/arduino/current/hardware/arduino/avr/cores/arduino/Arduino.h",
+                "/snap/arduino/current/hardware/arduino/avr/cores/arduino/HardwareSerial.h"
+            ]
+        }
+    ],
+    "version": 4
+}
