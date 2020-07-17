@@ -11,3 +11,4 @@ MH-Z14A is a `NDIR` sensor.
 
 * Make sure power supply range is stable and fit, or sensor might output very low number (e.g: 410ppm) 
 * At beginning (around 30 seconds), the sensor response is not correct.
+* When doing zero point calibration, put MH-Z14A sensor in outdoor that CO2 level is 400ppm.

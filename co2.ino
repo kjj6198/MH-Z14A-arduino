@@ -4,6 +4,15 @@
 
 byte commands[9] = {0xff, 0x01, 0x0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x79};
 byte response[9];
+
+// SoftwareSerial
+// Arduino Uno has built-in support for serial communication (pin0 and 1)
+// And usually happens by hardware (built into the chip) called UART
+// It allows hardware do the serial communication while working on other task.
+
+// SoftwareSerial library allows any digital pin to do the UART communication, as long as device supports UART procotol as well. 
+// rx: receive
+// tx: transmit
 SoftwareSerial co2Serial(3, 4); // RX, TX
 
 struct Co2Result
@@ -15,6 +24,8 @@ struct Co2Result
   unsigned short ppm;
 };
 
+// in MH-Z14A, there are multiple commands defined as follows:
+// you can find command code in datasheet.
 enum COMMANDS
 {
   GET_GAS = 0x86,
@@ -71,6 +82,10 @@ void setup()
 {
   co2Serial.begin(9600);
   Serial.begin(9600);
+  
+  // When doing zero point calibration
+  // put MH-Z14A sensor in outdoor that CO2 level is 400ppm.
+  
   // Comment me out when configured
   //------------------------
   // wait 20 minutes then reset
